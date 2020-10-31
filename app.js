@@ -23,13 +23,7 @@ const express = require('express'),
  
     }
     
-    const play=(position,room)=>{
-        console.log(position);
-        isPlayer1?playTurn(1,position):playTurn(2,position)
-        isPlayer1 = !isPlayer1
-        
-        
-    }
+ 
     
     const updatePlayablePosition=(position,room)=>{
         // console.log(playablePosition[position]);
