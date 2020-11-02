@@ -2,7 +2,8 @@ const express = require('express'),
     app = express()
     server = require('http').createServer(app),
     port = process.env.PORT || 3001,
-    io = require('socket.io')(server)
+    io = require('socket.io')(server),
+    cors = require('cors')
 
     // main object for handeling the game data
 let gameArea = {}
@@ -12,7 +13,7 @@ let gameStatus  = [[0,0,0,0,0,0,0,],[0,0,0,0,0,0,0,],[0,0,0,0,0,0,0,],[0,0,0,0,0
 let playablePosition = [6,6,6,6,6,6,6]
 let winnerPlayer = null
 let room;
-
+app.use(cors())
 app.get("/",(req,res)=>{
     res.send("Backend for Connect 4")
 })
