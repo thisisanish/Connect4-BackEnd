@@ -78,12 +78,12 @@ const playTurn = (player,position,room)=>{
     // console.log(gameArea[room]);
     console.log(position);
     if(gameArea[room].playablePosition[position]==0){
-        console.log('Invalid move')
+        // console.log('Invalid move')
         return false
     }
     if(position > 6 | position <0 | position === null | position === undefined){
-        console.log(`position is ${position}`);
-        console.log('Wrong position')
+        // console.log(`position is ${position}`);
+        // console.log('Wrong position')
         return false
     }
         
@@ -141,13 +141,13 @@ io.on('connection',(socket)=>{
         loadData(room)
         if(gameArea[room]){
             let game = playTurn(userName,position,room)
-            console.log(game);
+            // console.log(game);
             io.of('/').in(room).clients((err,clients)=>{
                 game.playersInGame = clients
                 // 
             })    
             // console.log(io.in(room).clients());
-            console.log(game);
+            // console.log(game);
             io.to(room).emit('game',game)          
         }
             // console.log(gameArea);
@@ -155,7 +155,7 @@ io.on('connection',(socket)=>{
     })
 
     socket.on('resetBoard',(room)=>{
-        console.log("Reset");
+        // console.log("Reset");
         resetBoard(room)
         loadData(room)
         io.to(room).emit('game',gameArea[room])
