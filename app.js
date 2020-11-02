@@ -12,7 +12,10 @@ let gameStatus  = [[0,0,0,0,0,0,0,],[0,0,0,0,0,0,0,],[0,0,0,0,0,0,0,],[0,0,0,0,0
 let playablePosition = [6,6,6,6,6,6,6]
 let winnerPlayer = null
 let room;
-    
+
+app.get("/",(req,res){
+    res.send("Backend for Connect 4")
+})
     
 const winner = (player,method,room)=>{
     if(winnerPlayer){}
