@@ -135,13 +135,7 @@ io.on('connection',(socket)=>{
     socket.on('playPosition',({userName,room,position},cb)=>{
 
         console.log(userName, position, room);
-        // if(!gameArea[room]){            
-        //     let newRoomStarter = {
-        //         gameStatus  : [[0,0,0,0,0,0,0,],[0,0,0,0,0,0,0,],[0,0,0,0,0,0,0,],[0,0,0,0,0,0,0,],[0,0,0,0,0,0,0,],[0,0,0,0,0,0,0,]],
-        //         playablePosition : [6,6,6,6,6,6,6],
-        //     }
-        //     gameArea[room] = newRoomStarter 
-        // }
+  
         loadData(room)
         if(gameArea[room]){
             let game = playTurn(userName,position,room)
