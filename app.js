@@ -13,7 +13,7 @@ let playablePosition = [6,6,6,6,6,6,6]
 let winnerPlayer = null
 let room;
 
-app.get("/",(req,res){
+app.get("/",(req,res)=>{
     res.send("Backend for Connect 4")
 })
     
