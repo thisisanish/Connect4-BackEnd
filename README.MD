@@ -1,4 +1,4 @@
-# Backend for Conect 4
+# Backend for Connect 4
 
 ### [FrontEnd Hosted on Netlify](https://connectquattro.netlify.app/)
 
