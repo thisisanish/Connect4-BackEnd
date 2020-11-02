@@ -2,7 +2,7 @@ const express = require('express'),
     app = express()
     server = require('http').createServer(app),
     port = process.env.PORT || 3001,
-    io = require('socket.io')(server),
+    io = require('socket.io')(server,{ origins: '*:*'}),
     cors = require('cors')
 
     // main object for handeling the game data
